@@ -23,3 +23,22 @@ spec:
           envFrom:
             - secretRef:
                 name: muvico-prod-secrets
+          readinessProbe:
+            httpGet:
+              path: /api/terms
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /api/terms
+              port: 8000
+            initialDelaySeconds: 20
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

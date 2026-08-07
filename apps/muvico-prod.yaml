@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: muvico
+  project: muvico-prod
   source:
     repoURL: https://github.com/MuViCo/gitops.git
     targetRevision: main

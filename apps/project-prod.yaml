@@ -1,10 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: muvico
+  name: muvico-prod
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
-  description: MuViCo application (staging and production)
+  description: MuViCo production environment
   sourceRepos:
     - https://github.com/MuViCo/gitops.git
   destinations:
