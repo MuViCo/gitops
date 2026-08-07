@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: muvico
+  namespace: argocd
+spec:
+  description: MuViCo application (staging and production)
+  sourceRepos:
+    - https://github.com/MuViCo/gitops.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: default
+  clusterResourceWhitelist: []
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

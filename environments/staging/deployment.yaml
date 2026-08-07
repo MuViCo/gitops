@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: muvico-staging-dep
+  labels:
+    app: muvico-staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: muvico-staging
+  template:
+    metadata:
+      labels:
+        app: muvico-staging
+    spec:
+      containers:
+        - name: muvico-staging
+          image: quay.io/muvico_hy/muvico:staging
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: muvico-staging-secrets
