@@ -6,11 +6,11 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd-image-updater.argoproj.io/image-list: muvico=quay.io/muvico_hy/muvico
+    argocd-image-updater.argoproj.io/image-list: muvico=ghcr.io/muvico/muvico
     argocd-image-updater.argoproj.io/muvico.update-strategy: newest-build
     argocd-image-updater.argoproj.io/muvico.allow-tags: regexp:^sha-[0-9a-f]{7}$
     argocd-image-updater.argoproj.io/write-back-method: argocd
-    argocd-image-updater.argoproj.io/muvico.kustomize.image-name: quay.io/muvico_hy/muvico
+    argocd-image-updater.argoproj.io/muvico.kustomize.image-name: ghcr.io/muvico/muvico
 spec:
   project: muvico-staging
   source:

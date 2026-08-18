@@ -3,7 +3,7 @@
 ![Argo CD](https://img.shields.io/badge/Argo%20CD-EF7B4D?logo=argo&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)
 ![Kustomize](https://img.shields.io/badge/Kustomize-7B42BC?logo=kubernetes&logoColor=white)
-![Quay.io](https://img.shields.io/badge/Quay.io-EE0000?logo=redhat&logoColor=white)
+![GHCR](https://img.shields.io/badge/GHCR-181717?logo=github&logoColor=white)
 ![UpCloud](https://img.shields.io/badge/UpCloud-7B00FF?logo=upcloud&logoColor=white)
 
 GitOps repository for the MuViCo Kubernetes deployment on UpCloud. Argo CD
