@@ -5,6 +5,12 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: muvico=ghcr.io/muvico/muvico
+    argocd-image-updater.argoproj.io/muvico.update-strategy: semver
+    argocd-image-updater.argoproj.io/muvico.allow-tags: regexp:^v[0-9]+\.[0-9]+\.[0-9]+$
+    argocd-image-updater.argoproj.io/write-back-method: argocd
+    argocd-image-updater.argoproj.io/muvico.kustomize.image-name: ghcr.io/muvico/muvico
 spec:
   project: muvico-prod
   source:
@@ -15,5 +21,8 @@ spec:
     server: https://kubernetes.default.svc
     namespace: default
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=false
